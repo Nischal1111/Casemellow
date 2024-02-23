@@ -1,0 +1,11 @@
+.product-image{
+    height: 400px;
+    width: 300px;
+}
+.single-card{
+    position: relative;
+    top: 6rem;
+    height: 600px;
+    margin-left: 5rem;
+    
+}

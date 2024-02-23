@@ -1,0 +1,13 @@
+.nav{
+    height: 5rem;
+    background-color: rgb(234, 231, 231);
+
+}
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-size: 2rem;
+   margin-bottom: .5rem;
+   margin-left: -3rem;
+
+}
