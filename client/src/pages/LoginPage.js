@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-
+import "../css/login.css"
 import '../App.css'
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import { UserContext } from "../UserContex";
 
 
@@ -56,39 +58,39 @@ export default function LoginPage() {
         return <Navigate to={`/`} />;
     }
 
-    const backgroundImageUrl = "https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGltYWdlfGVufDB8fDB8fHww"
+    const backgroundImageUrl = "https://images.pexels.com/photos/9956771/pexels-photo-9956771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     return (
         <div
             className="flex items-center justify-center h-screen"
             style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
         >
             <div className="absolute inset-0 bg-black opacity-40"></div>
-            <div className="relative bg-white p-8 rounded shadow-md w-96 ">
-                <h1 className="text-2xl font-bold mb-6 text-black">Login</h1>
+            <div className=" login-container relative bg-transparent">
+                <h1 className=" login-text font-bold mb-6 text-white">Login</h1>
                 {loading ? (<span className="loader"></span>) :(
                     <>
                         <form onSubmit={loginUser}>
                             <div className="mb-4">
-                                <label className="block text-sm font-medium text-black">Email</label>
                                 <input
                                     type="text"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                    className="max-w-md mt-1 p-2 w-full border rounded-md"
-                                    placeholder="example@gmail.com"
+                                    className="login-input max-w-md mt-1 p-2 w-full"
+                                    placeholder="Email/Username"
                                 />
+                                <FaUser className="login-icon"/>
                             </div>
                             <div className="mb-4">
-                                <label className="block text-sm font-medium text-black">Password</label>
                                 <input
                                     type="password"
                                     required
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="max-w-md mt-1 p-2 w-full border rounded-md"
-                                    placeholder="example123"
+                                    className=" login-input max-w-md mt-1 p-2 w-full "
+                                    placeholder="Password"
                                 />
+                                <FaLock className="login-icon2"/>
                             </div>
                             {loginErr && (
                                 <p className="text-red-500 text-sm mb-4">
@@ -97,13 +99,13 @@ export default function LoginPage() {
                             )}
                             <button
                                 type="submit"
-                                className="bg-black text-white font-bold px-4 py-2 rounded-md hover:bg-gray-800"
+                                className="login-button"
                             >
                                 Login
                             </button>
                         </form>
                         <div className="mt-4">
-                            <p className="text-sm text-black">
+                            <p className="text-sm text-white">
                                 Don't have an account?{" "}
                                 <Link to="/register" className="text-red-500 hover:underline">
                                     Register here

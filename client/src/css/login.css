@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+.login-container{
+    border: 1px solid  whitesmoke;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    font-family: 'Comfortaa', cursive;
+    backdrop-filter: blur(30px);
+    width: 400px;
+}
+
+input:focus{
+    outline: none;
+}
+.login-button{
+    padding: .7rem 2rem;
+    background-color: whitesmoke;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    transition: all .3s;
+    margin-top: 1rem;
+    margin-left: 4.5rem;
+    width: 50%;
+}
+.login-button:hover {
+     background-color: black;
+     color: white;
+     transform: scale(.9);
+     border: white 1px solid;
+     transition: all .3s;
+ }
+
+ .login-text{
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-left: 6rem;
+ }
+
+.login-input{
+    padding:1rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid white;
+    margin-top: 1rem;
+    border-radius: 40px;
+}
+
+ login-input::placeholder{
+    color: white;
+ }
+
+.login-input:focus{
+    color: white;
+    background-color: transparent;
+}
+.login-icon{
+    color: whitesmoke;
+    font-size: 22px;
+    position: absolute;
+    right: 64px;
+    top: 8.3rem;
+}
+.login-icon2{
+    color: whitesmoke;
+        font-size: 22px;
+        font-weight: 100;
+        position: absolute;
+        right: 64px;
+        top: 14rem;
+}

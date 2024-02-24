@@ -55,17 +55,14 @@ export default function HomePage() {
       {/* Image with Info */}
       <div className="relative">
         <img
-          src="/bg.jpg"
+          src="https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg"
           alt="Big Image"
           className="w-full object-cover"
-          style={{ height: "60vh" }}
+          style={{ height: "90vh" }}
 
         />
         <div className="absolute top-2/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-black">
-          <h2 className="text-5xl font-bold mb-4">Bienvenido a Cover Craftt</h2>
-          <p className="text-lg">
-            Explore the latest trends in the world of smartphones & laptops<br/> cover and wraps.
-          </p>
+          
         </div>
       </div>
 

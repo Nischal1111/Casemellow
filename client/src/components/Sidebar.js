@@ -22,7 +22,7 @@ const Sidebar = () => {
         <div className="burgermenu"></div>
       </div>
       <div className={closeMenu===false?"profile":"profile active"}>
-        <img src={`${url}/${userInfoSide.photo}`} alt="" className="profile" />
+        <img src={`${url}/${userInfoSide?.photo}`} alt="" className="profile" />
         <div className="profilecontents">
           <p className="name">{userInfoSide?.firstName}</p>
           <p className="email">{userInfoSide?.email}</p>

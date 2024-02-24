@@ -36,7 +36,7 @@ const Navbar = () => {
                                     <div className="border-2 border-black p-1 px-3 rounded-full flex items-center mb-4">
                                     <div className="mr-2 ">
                                         <img
-                                            src={`${url}/${userInfoLS.photo}`}
+                                            src={`${url}/${userInfoLS?.photo}`}
                                             alt="Profile Image"
                                             className="w-10 h-10 rounded-full object-cover"
                                         />
