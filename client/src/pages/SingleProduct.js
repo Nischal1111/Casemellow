@@ -7,6 +7,7 @@ import "../css/Singleproduct.css"
 import { useDispatch,useSelector } from "react-redux";
 import { selectCart } from "../redux/CartSlice"; 
 import { addToCart } from "../redux/CartSlice";
+import {motion as m} from "framer-motion"
 
 
 
@@ -54,12 +55,18 @@ export default function SingleProduct(){
             }
             setTimeout(() => {
                 setMessage('');
-            }, 3000);
+            }, 1500);
         }
     };
 
     return(
       <>
+      <m.div
+      initial={{opacity:0}} 
+      animate={{opacity:1}}
+      exit={{opacity:0}}
+      transition={{duration:1,ease:"easeOut"}}
+      >
       <Navbar/>
       <Sidebar/>
      {message && <div className={`item-added ${message === 'Item is already in the cart' ? 'already-in-cart' : ''}`}>{message}</div>}
@@ -102,7 +109,7 @@ export default function SingleProduct(){
 )}
 
         </div>
-    
+      </m.div>
 
       </>
     )}

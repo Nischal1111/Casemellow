@@ -6,6 +6,7 @@ import '../App.css'
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { UserContext } from "../UserContex";
+import {motion as m } from "framer-motion"
 
 
 export default function LoginPage() {
@@ -60,6 +61,12 @@ export default function LoginPage() {
 
     const backgroundImageUrl = "https://images.pexels.com/photos/9956771/pexels-photo-9956771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     return (
+        <m.div
+        initial={{opacity:0}} 
+        animate={{opacity:1}}
+        exit={{opacity:0}} 
+        transition={{duration:1,ease:"easeOut"}}
+        >
         <div
             className="flex items-center justify-center h-screen"
             style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -117,5 +124,6 @@ export default function LoginPage() {
                 ) }
             </div>
         </div>
+        </m.div>
     );
 }

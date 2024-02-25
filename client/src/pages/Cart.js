@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from '../redux/CartSlice';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
+import {motion as m} from "framer-motion"
 import '../components/Cart.css'; // Import the CSS file
 
 const Cart = () => {
@@ -17,7 +18,7 @@ const Cart = () => {
         setRem(true)
         setTimeout(()=>{
             setRem(false)
-        },2000)
+        },1500)
     };
 
     const handleClearCart = () => {
@@ -38,6 +39,12 @@ const Cart = () => {
 
     return (
         <>
+        <m.div
+        initial={{opacity:0}} 
+        animate={{opacity:1}}
+        exit={{opacity:0}} 
+        transition={{duration:1,ease:"easeOut"}}
+        >
             <Navbar/>
             <Sidebar/>
             <div className={rem?"item-removed active":"item-removed"}>Item Removed</div>
@@ -70,6 +77,7 @@ const Cart = () => {
                     </>
                 )}
             </div>
+        </m.div>
         </>
     );
 };

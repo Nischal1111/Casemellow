@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {motion as m} from "framer-motion"
 // import { UserContext } from "../UserContex";
 import axios from "axios";
 import '../App.css';
@@ -41,16 +42,17 @@ export default function HomePage() {
     }
   };
 
-  //get user data
-  // const userData = JSON.parse(localStorage.getItem("userInfo"));
-
   useEffect(() => {
     getProducts();
   }, [typeFilter]);
 
-  // console.log(products);
-  // console.log(typeFilter);
   return (
+    <m.div 
+    initial={{opacity:0}} 
+    animate={{opacity:1}}
+    exit={{opacity:1}} 
+    transition={{duration:1,ease:"easeOut"}}
+    >
     <div className="">
       {/* Image with Info */}
       <div className="relative">
@@ -126,5 +128,6 @@ export default function HomePage() {
 
       </div>
     </div>
+    </m.div>
   );
 }

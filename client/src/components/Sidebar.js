@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaHome, FaMobile, FaLaptop, FaLayerGroup, FaCog } from 'react-icons/fa';
 import { Link} from 'react-router-dom';
 import './Sidebar.css';
@@ -7,12 +7,24 @@ const Sidebar = () => {
 
     const [closeMenu,setCloseMenu]=useState(true);
     const userInfoSide = JSON.parse(localStorage.getItem("userInfo"));
+    const sidebarRef=useRef();
     const url = "http://localhost:4000"
     const handletoggle=()=>{
         setCloseMenu(!closeMenu)
     }
+    useEffect(()=>{
+      let handler = (e)=>{
+        if(!sidebarRef.current.contains(e.target)){
+          setCloseMenu(true)
+        }
+      }
+      document.addEventListener("mousedown",handler);
+      return()=>{
+        document.removeEventListener("mousedown",handler)
+    }
+    })
   return (
-    <div className={closeMenu===false?"prasidebar":"prasidebar active"}>
+    <div className={closeMenu===false?"prasidebar":"prasidebar active"} ref={sidebarRef}>
       <div className={closeMenu===false?"logo-container":"logo-container active"}>
         <img src="logo.png" alt="" className="logo h-10 w-10" />
         <h2 className="title-name">CoverCraft</h2>

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import "../css/login.css"
+import {motion as m} from "framer-motion"
 
 export default function RegisterPage(){
   const [formData, setFormData] = useState({
@@ -84,6 +85,12 @@ export default function RegisterPage(){
 
 
   return (
+    <m.div
+    initial={{opacity:0}} 
+    animate={{opacity:1}}
+    exit={{opacity:0}} 
+    transition={{duration:1,ease:"easeOut"}}
+    >
     <div className="flex justify-center items-center h-screen bg-gray-100"
     style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
@@ -207,6 +214,7 @@ export default function RegisterPage(){
         </p>
       </div>
     </div>
+    </m.div>
   );
 };
 

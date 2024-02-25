@@ -20,6 +20,7 @@ import { UserContext } from './UserContex';
 import SingleProduct from './pages/SingleProduct';
 
 import { Provider } from 'react-redux';
+import { AnimatePresence } from 'framer-motion';
 // import PageNotFound from './pages/PageNotFound';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 
   const isAdmin = userInfo ? userInfo.isAdmin : false;
   return (
+    <AnimatePresence initial={false}>
     <Provider store={store}>
     <Routes>
       <Route path='/' element={<Layout />} >
@@ -63,6 +65,7 @@ function App() {
         </Route>)}
     </Routes>
     </Provider>
+    </AnimatePresence>
 
 
   
