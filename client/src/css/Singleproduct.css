@@ -9,3 +9,34 @@
     margin-left: 5rem;
     
 }
+
+.item-added{
+    z-index: 10000;
+    background-color: rgb(128, 234, 128);
+    position:fixed;
+    padding: 2rem;
+    top: 4rem;
+    font-weight: 300;
+    left: 45rem;
+    color: white;
+    border-radius: 20px;
+    width:11.5%;
+    letter-spacing: 3px;
+    opacity: .7;
+    transition: all .3s;
+}
+.item-added.already-in-cart{
+    z-index: 10000;
+        letter-spacing: 3px;
+        font-weight: 300;
+        background-color: rgb(117, 136, 247);
+        position: fixed;
+        padding: 1rem 2rem;
+        top: 6rem;
+        left: 42rem;
+        color: white;
+        border-radius: 20px;
+        width: 22%;
+    opacity: .7;
+    transition: all .3s
+}

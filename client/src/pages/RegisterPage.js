@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
+import "../css/login.css"
 
 export default function RegisterPage(){
   const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ export default function RegisterPage(){
   }
 
 
-  const backgroundImageUrl = "https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGltYWdlfGVufDB8fDB8fHww"
+  const backgroundImageUrl = "https://images.pexels.com/photos/9956771/pexels-photo-9956771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 
 
   return (
@@ -87,46 +88,40 @@ export default function RegisterPage(){
     style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
       <div className="absolute inset-0 bg-black opacity-40"></div>
-      <div className="relative bg-white p-8 shadow-md rounded-md max-w-md w-full">
-        <h1 className="text-2xl font-bold mb-6">Register</h1>
+      <div className="register-container relative">
+        <h1 className="register-text font-bold mb-6 text-white">Register Here | Join CoverCraft</h1>
         <form onSubmit={registerUser}>
+          <div className='div1 flex items-center justify-between'>
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">First Name <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">First Name <span className='text-red-600'>*</span></label>
             <input
               type="text"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md)"
+              autoComplete='off'
+              autoFocus
               required
             />
           </div>
-
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Middle Name</label>
-            <input
-              type="text"
-              name="middleName"
-              value={formData.middleName}
-              onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Last Name <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Last Name <span className='text-red-600'>*</span></label>
             <input
               type="text"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md ml-1rem"
               required
+              autoComplete='off'
             />
           </div>
+          </div>
 
+          <div className='div1 flex items-center justify-between'>
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Email <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Email <span className='text-red-600'>*</span></label>
             <input
               type="email"
               name="email"
@@ -134,11 +129,11 @@ export default function RegisterPage(){
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md"
               required
+              autoComplete='off'
             />
           </div>
-
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Number <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Number <span className='text-red-600'>*</span></label>
             <input
               type="number"
               name="number"
@@ -146,11 +141,15 @@ export default function RegisterPage(){
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md"
               required
+              autoComplete='off'
             />
           </div>
+          </div>
+
+          <div className='div1 flex items-center justify-between'>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Password <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Password <span className='text-red-600'>*</span></label>
             <input
               type="password"
               name="password"
@@ -158,11 +157,12 @@ export default function RegisterPage(){
               onChange={handleChange}
               className="mt-1 p-2 w-full border rounded-md"
               required
+              autoComplete='off'
               minLength="8"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Confirm Password <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Confirm Password <span className='text-red-600'>*</span></label>
             <input
               type="password"
               name="password"
@@ -170,12 +170,14 @@ export default function RegisterPage(){
             onChange={e => setConfirmPassword(e.target.value)}
               className="mt-1 p-2 w-full border rounded-md"
               required
+              autoComplete='off'
               minLength="8"
             />
           </div>
+          </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-600">Photo <span className='text-red-600'>*</span></label>
+            <label className="block text-sm font-medium text-white">Photo <span className='text-red-600'>*</span></label>
             {formData.userPhoto && (
               <img
                 src={URL.createObjectURL(formData.userPhoto)}
@@ -187,20 +189,21 @@ export default function RegisterPage(){
               type="file"
               name="userPhoto"
               value={formData.photo}
+              autoComplete='off'
               onChange={handleChange}
-              className="mt-1 p-2 w-full border rounded-md"
+              className="mt-1 p-2 w-full border rounded-md text-white ml-2"
             />
           </div>
 
           <button
             type="submit"
-            className="bg-blue-500 text-white font-bold px-4 py-2 rounded-md hover:bg-blue-400"
+            className="reg-button"
           >
             Register
           </button>
         </form>
-        <p className="mt-4 text-sm text-gray-600">
-          Already have an account? <Link to="/login" className="text-blue-500">Login here</Link>
+        <p className="mt-4 text-sm text-white">
+          Already have an account? <Link to="/login" className="text-red-500">Login here</Link>
         </p>
       </div>
     </div>

@@ -39,6 +39,7 @@ input:focus{
 
 .login-input{
     padding:1rem 1.5rem;
+    color: white;
     background-color: transparent;
     border: 2px solid white;
     margin-top: 1rem;
@@ -67,4 +68,53 @@ input:focus{
         position: absolute;
         right: 64px;
         top: 14rem;
+}
+
+/* Register-CSS */
+
+
+.register-container{
+    background-color: transparent;
+    border-radius: 20px;
+    font-family: 'Comfortaa',cursive;;
+    padding: 2rem 4rem;
+    backdrop-filter: blur(20px);
+    border: 1px solid whitesmoke;
+    width: 600px;
+}
+
+.register-text{
+    font-size: 25.3px;
+    letter-spacing: 2px;
+}
+
+.div1 input{
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px white solid;
+}
+.div1 input::placeholder{
+    color: white;
+}
+.div1 input:focus{
+    background-color: transparent;
+}
+.reg-button {
+    padding: .7rem 2rem;
+    background-color: whitesmoke;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    transition: all .3s;
+    margin-top: 1rem;
+    margin-left: 7.5rem;
+    width: 50%;
+}
+
+.reg-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(.9);
+    border: white 1px solid;
+    transition: all .3s;
 }

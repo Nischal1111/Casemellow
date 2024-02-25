@@ -71,3 +71,32 @@
     width: 200px;
     object-fit: contain;
 }
+
+.item-removed{
+    background-color: rgb(239, 108, 108);
+    padding: 2rem;
+    position: fixed;
+    top: 7rem;
+    opacity: 0;
+    border-radius: 20px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    width: 13%;
+    color: white;
+    left: 44rem;
+    transition: all .3s;
+}
+.item-removed.active {
+    background-color: rgb(239, 108, 108);
+    padding: 2rem;
+    position: fixed;
+    top: 7rem;
+    opacity: 0.7;
+    border-radius: 20px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    width: 13%;
+    color: white;
+    left: 44rem;
+    transition: all .3s;
+}

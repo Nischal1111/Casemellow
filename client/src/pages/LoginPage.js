@@ -78,6 +78,7 @@ export default function LoginPage() {
                                     required
                                     className="login-input max-w-md mt-1 p-2 w-full"
                                     placeholder="Email/Username"
+                                    autoFocus
                                 />
                                 <FaUser className="login-icon"/>
                             </div>

@@ -1,6 +1,6 @@
 // Cart.js
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, increaseQuantity, decreaseQuantity } from '../redux/CartSlice';
 import Sidebar from '../components/Sidebar';
@@ -10,9 +10,14 @@ import '../components/Cart.css'; // Import the CSS file
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cart);
     const dispatch = useDispatch();
+    const [rem,setRem]=useState(false);
 
     const handleRemoveItem = (itemId) => {
         dispatch(removeFromCart(itemId));
+        setRem(true)
+        setTimeout(()=>{
+            setRem(false)
+        },2000)
     };
 
     const handleClearCart = () => {
@@ -35,8 +40,9 @@ const Cart = () => {
         <>
             <Navbar/>
             <Sidebar/>
+            <div className={rem?"item-removed active":"item-removed"}>Item Removed</div>
             <div className="cart-container">
-                <h1>Cart</h1>
+            <h1>Cart</h1>
                 {cartItems.length === 0 ? (
                     <p>No items in the cart at the moment</p>
                 ) : (
