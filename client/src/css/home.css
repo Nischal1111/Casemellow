@@ -1,0 +1,18 @@
+.home-text{
+    position: absolute;
+    top: 29rem;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    left: 10rem;
+    color: white;
+    font-family: 'Comfortaa',
+        cursive;
+}
+.change{
+    color: white;
+    position: absolute;
+    top: 32rem;
+    left: 12rem;
+    z-index: 1000;
+    font-size: 2.5rem;
+}

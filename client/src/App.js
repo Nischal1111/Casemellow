@@ -47,9 +47,8 @@ function App() {
         <Route path="/phones" element={<MobilePage />} />
         <Route path="/laptops" element={<LaptopPage/>} />
         <Route path="/wraps" element={<WrapsPage />} />
-
+        <Route path='/settings' element={<SettingPage />} />
       </Route>
-      <Route path='/settings' element={<SettingPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/cart" element={<CartPage/>}/>

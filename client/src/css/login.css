@@ -76,7 +76,7 @@ input:focus{
 .register-container{
     background-color: transparent;
     border-radius: 20px;
-    font-family: 'Comfortaa',cursive;;
+    font-family: 'Comfortaa',cursive;
     padding: 2rem 4rem;
     backdrop-filter: blur(20px);
     border: 1px solid whitesmoke;

@@ -188,6 +188,22 @@ ul li:hover {
     border-bottom: 2px solid rgb(237, 78, 78);
 }
 
+ul li.active{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0.75rem 0;
+    padding: .7rem 1.5rem .7rem 1.5rem;
+    width: 100%;
+    background-color: rgb(195, 193, 193);
+    color: rgb(50, 6, 50);
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 2px solid rgb(230, 68, 68);
+    transition: all .3s;
+}
+
 .prasidebar.active {
     width: 5rem;
     padding-left: .7rem;

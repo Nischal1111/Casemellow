@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaHome, FaMobile, FaLaptop, FaLayerGroup, FaCog } from 'react-icons/fa';
-import { Link} from 'react-router-dom';
+import { Link,useLocation} from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = () => {
@@ -9,6 +9,9 @@ const Sidebar = () => {
     const userInfoSide = JSON.parse(localStorage.getItem("userInfo"));
     const sidebarRef=useRef();
     const url = "http://localhost:4000"
+
+    const location = useLocation();
+
     const handletoggle=()=>{
         setCloseMenu(!closeMenu)
     }
@@ -42,7 +45,7 @@ const Sidebar = () => {
       </div>
       <div className={closeMenu === false?"pagescontainer":"pagescontainer active"}>
         <ul>
-          <li>
+          <li className={location.pathname==="/"?"active":""}>
             <div className='flex'>
             <Link to="/">
               <FaHome className='icons'/> 
@@ -50,7 +53,7 @@ const Sidebar = () => {
             </Link>
             </div>
           </li>
-          <li>
+          <li className={location.pathname==="/phones"?"active":""}>
             <div className='flex'>
             <Link to="/phones">
               <FaMobile className='icons' /> 
@@ -58,7 +61,7 @@ const Sidebar = () => {
             </Link>
             </div>
           </li>
-          <li>
+          <li className={location.pathname==="/laptops"?"active":""}>
             <div className='flex'>
             <Link to="/laptops">
               <FaLaptop className='icons'/> 
@@ -66,7 +69,7 @@ const Sidebar = () => {
             </Link>
             </div>
           </li>
-          <li>
+          <li className={location.pathname==="/wraps"?"active":""}>
             <div className='flex'>
             <Link to="/wraps">
               <FaLayerGroup className='icons'/> 
@@ -74,7 +77,7 @@ const Sidebar = () => {
             </Link>
             </div>
           </li>
-          <li>
+          <li className={location.pathname==="/settings"?"active":""}>
             <div className='flex'>
             <Link to="/settings">
               <FaCog className='icons'/> 

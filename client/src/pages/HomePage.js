@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {motion as m} from "framer-motion"
-// import { UserContext } from "../UserContex";
 import axios from "axios";
 import '../App.css';
+import "../css/home.css"
 
 export default function HomePage() {
   const url = "http://localhost:4000";
@@ -63,9 +63,6 @@ export default function HomePage() {
           style={{ height: "90vh" }}
 
         />
-        <div className="absolute top-2/3 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-black">
-          
-        </div>
       </div>
 
       {/* Shopping Cards Section */}
