@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import "./admin.css"
+import UserModal from "./UserModal"
 
 
 export default function AdminUsers() {
@@ -27,19 +29,18 @@ export default function AdminUsers() {
     useEffect(() => {
         getUsers()
     },[])
-    // console.log(user)
 
     return (
-        <div>
+        <div  className="admin-container">
             {user && (
                 <div>
                     {user.map((user) => (
-                        <div key={user._id} className=" flex gap-3 mb-4 p-4 bg-gray-100 rounded-md">
-                            <div>
-                                <img src={url+'/'+user.photo} alt={user.firstName} className="w-24 h-24 rounded-full object-cover" />
+                        <div key={user._id} className="admin-user">
+                            <div className="admin-image-div">
+                                <img src={url+'/'+user.photo} alt={user.firstName} className="admin-img object-cover" />
                             </div>
                             <div>
-                                <h2 className="text-xl font-semibold">{user.firstName} {user.lastName} <span className="text-sm">({user._id})</span></h2>
+                                <h2 className="text-xl font-semibold">{user.firstName} {user.lastName}</h2>
                                 
                                 <p className="text-purple-800">{`Number: ${user.number}`}</p>
                                 <p className="text-green-800">{`Email: ${user.email}`}</p>
@@ -57,6 +58,7 @@ export default function AdminUsers() {
                 <h1 className="text-2xl mb-4">No User Found</h1>
             </div>
         )}
+        <UserModal/>
         </div>
     )
     }

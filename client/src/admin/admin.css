@@ -1,0 +1,100 @@
+/* admin css */
+.admin-bar{
+    background-color: rgb(234, 231, 231);
+    padding: 2rem;
+    height: 100vh;
+    margin: 0;
+    width: 18rem;
+}
+
+.admin-path{
+    border: none;
+    border-bottom: red 2px solid;
+    background-color: rgb(209, 209, 209);
+    padding: .8rem 1.2rem;
+    transition: .3s all;
+}
+.admin-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: .8rem 1.2rem;
+}
+
+.admin-page:hover{
+    background-color: rgb(185, 184, 184);
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: .3s all;
+}
+.panel-name{
+    font-size: 24px;
+    color: white;
+    background-color: rgb(229, 121, 121);
+    padding: .6rem 1.5rem;
+    border-radius: 2rem;
+    margin-bottom:  1rem;
+    opacity: .8;
+    transition: .3s all;
+}
+.panel-name:hover{
+    background-color: rgb(203, 58, 58);
+    opacity: 1;
+    transition: .3s all;
+}
+
+/* admin-user */
+.admin-container{
+    width: 80%;
+    height: 90vh;
+}
+.admin-user{
+    width: 70%;
+    display: flex;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(213, 210, 210);
+    border: 1px solid black;
+    box-shadow: 0px 1px 4px rgba(0,0,0,.4);
+}
+
+.admin-image-div{
+    margin-right: 3rem;
+}
+.admin-img{
+    height: 12rem;
+    width: 12rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+.edit-button {
+    padding: 5px 12px;
+    background-color: #6dc983;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.delete-button {
+    padding: 8px 12px;
+    background-color: #e15a68;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+/* admin-modal */

@@ -2,7 +2,7 @@ import { Link,  Outlet, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { UserContext } from "../UserContex";
-
+import "./admin.css"
 
 export default function AdminLayout() {
   const url = "http://localhost:4000";
@@ -51,25 +51,25 @@ export default function AdminLayout() {
 
 
   return (
-    <div className="flex ">
+    <div className="flex">
       {/* for the sidebar */}
-      <div className="flex flex-col h-screen w-1/6 bg-red-700 p-4 sticky z-50 top-0">
-        <h1 className="text-white font-bold text-xl mb-4 mt-4">Admin Panel</h1>
+      <div className="admin-bar flex flex-col z-50">
+        <h1 className="panel-name">Admin Panel</h1>
 
         <div className="mt-3 mb-3">
-          <img src={url+'/'+image} alt="profile" className="w-20 h-20 rounded-full object-cover" />
+          <img src={url+'/'+image} alt="profile" className="w-20 h-20 rounded-full object-cover ml-10" />
           <h1 className="text-2xl font-bold">
             {firstName} {lastName}
           </h1>
         </div>
-        <div>
+        <div className="admin-page text-2xl">
           <Link to={'/'}>Home</Link>
         </div>
 
         <Link
           to={`/admin/dashboard`}
-          className={`text-2xl rounded-md mt-2 text-white hover:bg-black mb-2 p-2 ${
-            currentPath === "/admin/dashboard" && "bg-black"
+          className={`admin-page text-2xl text-black ${
+            currentPath === "/admin/dashboard" && "admin-path"
           }`}
           onClick={() => handleLinkClick("/admin/dashboard")}
         >
@@ -77,8 +77,8 @@ export default function AdminLayout() {
         </Link>
         <Link
           to={`/admin/users`}
-          className={`text-2xl rounded-md mt-2 text-white hover:bg-black mb-2 p-2 ${
-            currentPath === "/admin/users" && "bg-black"
+          className={`admin-page text-2xl mt-2 text-black ${
+            currentPath === "/admin/users" && "admin-path"
           }`}
           onClick={() => handleLinkClick("/admin/users")}
         >
@@ -86,8 +86,8 @@ export default function AdminLayout() {
         </Link>
         <Link
           to={`/admin/products`}
-          className={`text-2xl rounded-md mt-2 text-white hover:bg-black mb-2 p-2 ${
-            currentPath === "/admin/products" && "bg-black"
+          className={`admin-page text-2xl mt-2 text-black ${
+            currentPath === "/admin/products" && "admin-path"
           }`}
           onClick={() => handleLinkClick("/admin/products")}
         >
@@ -95,8 +95,8 @@ export default function AdminLayout() {
         </Link>
         <Link
           to={`/admin/add-products`}
-          className={`text-2xl rounded-md mt-2 text-white hover:bg-black mb-2 p-2 ${
-            currentPath === "/admin/add-products" && "bg-black"
+          className={`admin-page text-2xl mt-2 text-black ${
+            currentPath === "/admin/add-products" && "admin-path"
           }`}
           onClick={() => handleLinkClick("/admin/add-products")}
         >
@@ -104,7 +104,7 @@ export default function AdminLayout() {
         </Link>
         <button
           onClick={logoutHandler}
-          className="flex items-center gap-2 text-2xl rounded-md mt-5 text-white hover:bg-black mb-2 p-1"
+          className="admin-page flex items-center gap-2 text-2xl mt-5 text-black"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
