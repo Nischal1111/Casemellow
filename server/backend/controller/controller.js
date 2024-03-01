@@ -182,16 +182,16 @@ const getSingleProduct = async (req, res) => {
 
 // showing the product according to Type (mobile, laptop, wraps)
 
-const getProductsByType = async (req, res) => {
-    try {
-        const type = req.params.type;
-        const products = await Product.find({coverType:type});
-        res.status(200).json(products);
-    } catch (error) {
-        console.error("Error while getting products by type:", error);
-        return res.status(400).json({ message: "Error while getting products by type" });
-    }
-}
+// const getProductsByType = async (req, res) => {
+//     try {
+//         const type = req.params.type;
+//         const products = await Product.find({coverType:type});
+//         res.status(200).json(products);
+//     } catch (error) {
+//         console.error("Error while getting products by type:", error);
+//         return res.status(400).json({ message: "Error while getting products by type" });
+//     }
+// }
 
 //for editing , and deleting user
 // expected req data(userId)
@@ -341,7 +341,7 @@ module.exports = {
     getUsers,
     getProducts,
     getSingleProduct,
-    getProductsByType,
+    // getProductsByType,
     deleteUserCustomer,
     userRank,
     addToCart,

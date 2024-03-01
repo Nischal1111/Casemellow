@@ -15,7 +15,7 @@ const {
     getUsers,
     getProducts,
     getSingleProduct,
-    getProductsByType,
+    // getProductsByType,
     deleteUserCustomer,
     userRank,
     addToCart,
@@ -29,7 +29,7 @@ router.route('/logout').post(logout);
 router.route('/get-users').get(getUsers);
 router.route('/get-products').get(getProducts);
 router.route('/get-single-product/:id').get(getSingleProduct);
-router.route('/get-products-by-type/:type').get(getProductsByType);
+// router.route('/get-products-by-type/:type').get(getProductsByType);
 router.route('/delete-user/:id').post(deleteUserCustomer)
 router.route('/user-rank/:id').post(userRank)
 router.route('/add-to-cart').post(addToCart)
