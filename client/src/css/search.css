@@ -1,0 +1,120 @@
+.search {
+    display: flex;
+    margin: 3rem 4rem 2rem 4rem;
+    justify-content: space-between;
+    padding: 5px 2rem;
+    align-items: center;
+    position: relative;
+    background-color: rgb(11, 11, 11);
+    border-radius: 8px;
+}
+
+.search .searchicon {
+    background-color: var(--main--color);
+    font-size: 30px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    padding: .5rem;
+    margin: .5rem .1rem;
+    width: 10%;
+}
+
+.search .searchicon:hover {
+    transition: .4s all;
+    transform: scale(.9);
+    cursor: pointer;
+    color: black;
+}
+
+.dropdown {
+    border: 1px solid none;
+    position: relative;
+    border-radius: 16px;
+    font-weight: 600;
+    background-color: black;
+}
+
+.dropdown-btn {
+    display: flex;
+    width: 100%;
+    color: aliceblue;
+    text-align: left;
+    border: none;
+    align-items: center;
+    height: 60px;
+    padding: 0px 18px;
+    cursor: pointer;
+    background-color: black;
+}
+
+.mappinline {
+    font-size: 25px;
+    color: var(--main--color);
+    margin-right: 18px;
+    background-color: none;
+}
+
+.mappinline2 {
+    font-size: 30px;
+    color: var(--main--color);
+    margin-left: 20px;
+}
+
+.days {
+    font-size: 20px;
+}
+
+.daysp {
+    font-size: 16px;
+    color: grey;
+}
+
+.dropdown--menu {
+    padding: 8px 6px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    border-radius: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: absolute;
+
+}
+
+.dropdown--li {
+    font-weight: 200;
+    margin: .3rem;
+    position: relative;
+    color: aliceblue;
+    ;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dropdown--li:hover {
+    transform: scale(1.3);
+    transition: .3s all;
+    color: var(--main--color);
+}
+
+.ooo {
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    margin: 0rem 2rem 1rem 1rem;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.no-line {
+    text-decoration: none;
+    color: gray;
+    width: 50%;
+}
