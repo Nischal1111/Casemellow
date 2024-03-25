@@ -57,7 +57,7 @@ const Sidebar = () => {
             <div className='flex'>
             <Link to="/phones">
               <FaMobile className='icons' /> 
-            <span>Phones</span>
+            <span>Phone</span>
             </Link>
             </div>
           </li>
