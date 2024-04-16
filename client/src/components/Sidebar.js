@@ -30,7 +30,7 @@ const Sidebar = () => {
     <div className={closeMenu===false?"prasidebar":"prasidebar active"} ref={sidebarRef}>
       <div className={closeMenu===false?"logo-container":"logo-container active"}>
         <img src="logo.png" alt="" className="logo h-10 w-10" />
-        <h2 className="title-name">CoverCraft</h2>
+        <h2 className="title-name">Casemellow</h2>
       </div>
       <div className={closeMenu===false ? "burger":"burger active"}>
         <div className="burgertrigger" onClick={()=>{handletoggle()}}></div>
