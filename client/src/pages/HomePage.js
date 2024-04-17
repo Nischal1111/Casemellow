@@ -6,6 +6,10 @@ import "../App.css";
 import "../css/home.css";
 import Typedropdown from "../components/Typedropdown";
 
+const products =()=>{
+  
+}
+
 export default function HomePage() {
   const url = "http://localhost:4000";
   const [loading, setLoading] = useState(false);
