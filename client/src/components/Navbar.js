@@ -19,7 +19,7 @@ const Navbar = () => {
                         <header className="flex justify-between items-center p-4  w-4/5">
                             <div className="flex items-center ">
                             {/* Logo */}
-                            <h1 className="heading"> Welcome to CoverCraft</h1>
+                            <h1 className="heading"> Welcome to Casemellow</h1>
                             </div>
                             <div className='flex justify-between items-center'>
                             {userInfoLS ? (
@@ -49,17 +49,17 @@ const Navbar = () => {
                                 </div>
                                 </div>
                                 ):(
-                                    <div className="flex items-center bg-black rounded-full">
+                                    <div className="login-div flex items-center rounded-full">
                                         <Link
                                             to="/login"
-                                            className="text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-l-full transition duration-300"
+                                            className="nav-login"
                                         >
                                             Login
                                         </Link>
-                                        <span className="text-gray-500 mx-2">|</span>
+                                        <span className="text-blue-500 mx-2">|</span>
                                         <Link
                                             to="/register"
-                                            className="text-white bg-black hover:bg-gray-800 px-4 py-2 rounded-r-full transition duration-300"
+                                            className= "nav-login"
                                         >
                                             Register
                                         </Link>
@@ -67,8 +67,8 @@ const Navbar = () => {
                                 )}
                                 <Link to="/cart" className='link-cart'>
                              <div className='cart-items'>
-                                <div className='cart-number'> {cartItems.length} </div>
                                 <FaShoppingCart className='cart'/>
+                                <div className='cart-number'> {cartItems.length} </div>
                             </div>
                                 </Link>
                             </div>     

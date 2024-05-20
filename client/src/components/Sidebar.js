@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaHome, FaMobile, FaLaptop, FaLayerGroup, FaCog } from 'react-icons/fa';
 import { Link,useLocation} from 'react-router-dom';
 import './Sidebar.css';
+import casemellow from "/Users/nischalneupane/Desktop/Casemellow/client/src/assets/casemellow.png"
 
 const Sidebar = () => {
 
@@ -29,7 +30,7 @@ const Sidebar = () => {
   return (
     <div className={closeMenu===false?"prasidebar":"prasidebar active"} ref={sidebarRef}>
       <div className={closeMenu===false?"logo-container":"logo-container active"}>
-        <img src="logo.png" alt="" className="logo h-10 w-10" />
+        <img src={casemellow} alt="" className="logo h-10 w-10" />
         <h2 className="title-name">Casemellow</h2>
       </div>
       <div className={closeMenu===false ? "burger":"burger active"}>

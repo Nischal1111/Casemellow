@@ -4,7 +4,6 @@
     margin: 1rem;
     padding: 0.5rem 1rem;
     align-items: center;
-    position: relative;
     background-color: white;
     border-radius: 8px;
 }
@@ -16,47 +15,32 @@
     border-radius: 10px;
     padding: 0.3rem;
     margin-right: 0.5rem;
+    transition: 0.4s all;
+    cursor: pointer;
 }
 
 .searchicon:hover {
-    transition: 0.4s all;
     transform: scale(0.9);
-    cursor: pointer;
     color: black;
 }
 
 .dropdown {
-    border: 1px solid none;
-    position: relative;
-    border-radius: 16px;
-    font-weight: 600;
     margin: 1rem;
     background-color: rgb(237, 234, 234);
+    border-radius: 16px;
 }
 
 .dropdown-btn {
     display: flex;
     width: 100%;
     color: black;
-    text-align: left;
-    border: none;
     align-items: center;
     height: 60px;
-    padding: 0px 1rem;
+    padding: 0 1rem;
     cursor: pointer;
     background-color: white;
-}
-
-.mappinline {
-    font-size: 1.25rem;
-    color: black;
-    margin-right: 1rem;
-}
-
-.mappinline2 {
-    font-size: 1.5rem;
-    color: black;
-    margin-left: 1rem;
+    border: none;
+    text-align: left;
 }
 
 .days {
@@ -68,9 +52,9 @@
     color: black;
 }
 
-.dropdown--menu {
+.dropdown-menu {
     padding: 0.5rem;
-    width: 100%;
+    width: 30%;
     z-index: 10;
     border-radius: 10px;
     font-size: 1rem;
@@ -78,26 +62,22 @@
     letter-spacing: 1px;
     cursor: pointer;
     position: absolute;
+    background-color: rgb(184, 184, 249);
 }
 
 .dropdown--li {
     font-weight: 200;
     margin: 0.3rem;
-    position: relative;
     color: black;
     text-align: center;
     cursor: pointer;
     list-style: none;
+    transition: 0.3s all;
 }
 
 .dropdown--li:hover {
     transform: scale(1.3);
-    transition: 0.3s all;
     color: black;
-}
-
-.ooo {
-    margin-bottom: 0.625rem;
 }
 
 .container {

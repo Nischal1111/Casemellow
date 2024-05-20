@@ -1,13 +1,31 @@
 .nav{
-    height: 5rem;
-    background-color: rgb(234, 231, 231);
-
+    height: 5.5rem;
+    background-color: rgb(25, 25, 25);
+    position: fixed;
+    border-bottom: .5px solid aliceblue;
 }
 .heading{
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 3px;
+    color: aliceblue;
     font-size: 2rem;
    margin-bottom: .5rem;
    margin-left: -3rem;
 
+}
+
+.nav-login{
+    border-radius: 10rem;
+    color: aliceblue;
+    padding: .8rem 1.4rem;
+    transition: .5s all;
+}
+.nav-login:hover{
+    background-color: rgb(111, 112, 112);
+    transform: scale(1.1);
+    transition: .5s all;
+}
+
+.login-div{
+    background-color: rgb(60, 61, 61);
 }

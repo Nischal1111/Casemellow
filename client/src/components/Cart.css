@@ -1,23 +1,35 @@
 .cart{
     font-size: 2.2rem;
-    margin-bottom: .5rem;
+    color: aliceblue;
+    align-self: center;
+    display: flex;
+    transition: .5s all;
+}
+.cart:hover{
+    color: rgb(133, 133, 239);
+    transition: .5s all;
 }
 .link-cart{
     background-color: transparent;
+    margin-right: -5rem;
+}
+.cart-items{
+        display: flex;
+        position: relative;
 }
 .cart-number{
-    background-color:orange;
+    background-color:rgb(57, 65, 219);
     border-radius: 100%;
-    color: white;
+    color: aliceblue;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 25px;
     width: 25px;
-    position: absolute;
-    right: 10.4rem;
-    top: 1.3rem;
+    position: relative;
+    top: -10px;
+    left: -10px;
 }
 
 /* Cart.css */

@@ -16,6 +16,9 @@
     box-sizing: border-box;
     animation: shadowPulse 2s linear infinite;
   }
+  ::-webkit-scrollbar{
+    display: none;
+  }
   
 @keyframes shadowPulse {
     33% {

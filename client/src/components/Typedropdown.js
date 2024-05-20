@@ -1,13 +1,58 @@
-// Typedropdown.js
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { Menu } from "@headlessui/react";
-import "../css/search.css"
-import { ProductContext } from './ProductContext';
+import axios from 'axios';
+import "../css/search.css";
 
-const Typedropdown = () => {
-  const { selectedCoverType, setSelectedCoverType, covertype } = useContext(ProductContext);
+const Typedropdown = ({ onCoverTypeChange }) => {
+  const url = "http://localhost:4000";
+  const [loading, setLoading] = useState(false);
+  const [selectedCoverType, setSelectedCoverType] = useState('All devices');
+  const [covertype, setCovertype] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    console.log("Fetching products...");
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`${url}/get-products`);
+        console.log("Fetched products:", response.data);
+        const allCoverTypes = response.data.map((product) => product.coverType);
+        const uniqueCoverTypes = ['All devices', ...new Set(allCoverTypes)];
+        console.log("Cover types:", uniqueCoverTypes);
+        setCovertype(uniqueCoverTypes);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  const handleCoverTypeChange = async (cover) => {
+    setSelectedCoverType(cover);
+    setIsOpen(false);
+    setLoading(true);
+    
+    try {
+      const response = await axios.get(`${url}/get-products`, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        params: {
+          coverType: cover === 'All devices' ? '' : cover
+        }
+      });
+      onCoverTypeChange(response.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -25,12 +70,13 @@ const Typedropdown = () => {
         </Menu.Button>
         <Menu.Items className="dropdown-menu">
           {covertype.map((cover, index) => (
-            <Menu.Item as="li" key={index} className="dropdown--li" onClick={() => setSelectedCoverType(cover)}>
+            <Menu.Item as="li" key={index} className="dropdown--li" onClick={() => handleCoverTypeChange(cover)}>
               {cover}
             </Menu.Item>
           ))}
         </Menu.Items>
       </Menu>
+      {loading ? <p>Loading...</p> : <div>{/* Render your products here */}</div>}
     </>
   );
 };
