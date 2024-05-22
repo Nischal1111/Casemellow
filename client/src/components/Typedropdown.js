@@ -76,7 +76,7 @@ const Typedropdown = ({ onCoverTypeChange }) => {
           ))}
         </Menu.Items>
       </Menu>
-      {loading ? <p>Loading...</p> : <div>{/* Render your products here */}</div>}
+      {loading ? <p>.</p> : <div></div>}
     </>
   );
 };
